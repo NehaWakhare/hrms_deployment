@@ -1,0 +1,16 @@
+# hrms-servicemonitor.yml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: hrms-monitor
+  namespace: hrms
+  labels:
+    release: kind-prometheus
+spec:
+  selector:
+    matchLabels:
+      app: backend  # तुमच्या backend चा label
+  endpoints:
+  - port: http
+    path: /actuator/prometheus
+    interval: 30s
