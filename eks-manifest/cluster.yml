@@ -1,0 +1,7 @@
+managedNodeGroups:
+  - name: hrms-nodes
+    instanceType: t3.medium
+    desiredCapacity: 2
+    minSize: 1
+    maxSize: 3
+
